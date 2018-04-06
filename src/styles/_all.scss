@@ -1,6 +1,7 @@
 @import './utilities/variables.scss';
 @import './utilities/mixins.scss';
 
+@import './_gallery.scss';
 @import './_header.scss';
 @import './_main.scss';
 @import './_modal.scss';
@@ -16,4 +17,18 @@ body {
 button, input[type=submit] {
     background: none;
     border: none;
+}
+
+button {
+    font-weight: 600;
+}
+
+.new-btn {
+    margin: 20px 0;
+    color: $nice-color;
+    font-size: 115%;
+    padding: 10px 30px;
+    border: 2px solid $nice-color;
+    text-transform: uppercase;
+    @include border-radius(7px);
 }

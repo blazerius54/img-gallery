@@ -4,23 +4,4 @@
     align-items: center;
     justify-content: center;
     height: 100%;
-    
-    .new-btn {
-        margin: 20px 0;
-        color: $nice-color;
-        font-size: 115%;
-        padding: 10px 30px;
-        border: 2px solid $nice-color;
-        text-transform: uppercase;
-        @include border-radius(7px);
-    }
-
-    .photo-container {
-        width: 80%;
-            
-        img {
-                align-self: center;
-                max-width: 100%;
-            }
-    }
 }
