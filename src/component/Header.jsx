@@ -4,7 +4,8 @@ class Header extends Component {
     render() {
         return (
             <header>
-                <h2>Image Gallery</h2>
+                <div className='round-div'></div>
+                <h2>Images</h2>
             </header>
         )
     }

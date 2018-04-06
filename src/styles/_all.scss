@@ -1,8 +1,19 @@
 @import './utilities/variables.scss';
+@import './utilities/mixins.scss';
 
 @import './_header.scss';
 @import './_main.scss';
+@import './_modal.scss';
+
+*:focus {
+    outline:none !important;
+}
 
 body {
     font-family: $main-font;
+}
+
+button, input[type=submit] {
+    background: none;
+    border: none;
 }

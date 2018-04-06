@@ -1,0 +1,42 @@
+.modal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: rgba($color: #000000, $alpha: 0.3);
+    z-index: 999;
+    width: 100%;
+    height: 100%;
+
+    .modal-content {
+        background: rgb(248, 248, 248);
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items:  center;
+        .modal-form {
+            // background: rgb(255, 255, 255);
+            width: 50%;
+            
+            input[type=text] {
+                margin-bottom: 30px;
+                font-size: 110%;
+
+            }
+            .btn-container {
+                display: flex;
+                justify-content: space-around;
+
+                button {
+                    text-transform: uppercase;
+                    font-size: 110%;
+                    
+                }
+            }
+        }
+    }
+}

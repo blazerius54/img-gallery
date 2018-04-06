@@ -12,11 +12,12 @@ class Main extends Component {
         }
     }
 
-    addPhoto (a, b) {
+    addPhoto (title, src) {
+        title && src?
         this.setState({
-            images: [...this.state.images, { title: a, src: b }]
-            
-        })
+            images: [...this.state.images, { title, src }]
+        }) : null
+        console.log(this.state.images)
     }
 
     render() {
@@ -26,7 +27,8 @@ class Main extends Component {
             <div className='main'>
                 <button onClick={()=>{this.setState({
                     isModalVisible: !isModalVisible
-                })}}>New</button>
+                })}}
+                className='new-btn'>New</button>
                 {
                     this.state.isModalVisible && <Modal addPhoto={this.addPhoto.bind(this)}/>
                     
