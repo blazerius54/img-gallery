@@ -1,0 +1,8 @@
+@import './utilities/variables.scss';
+
+@import './_header.scss';
+@import './_main.scss';
+
+body {
+    font-family: $main-font;
+}
