@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class Gallery extends Component {
 
     render() {
-        const { images, deletePhoto } = this.props;
+        const { images, deletePhoto, isDesktop } = this.props;
 
         return (
             <div className='photo-container'>
@@ -13,14 +13,15 @@ class Gallery extends Component {
                             <div className='single-item' key={index}>
                                 <div className='single-item-header'>
                                     <h2>{item.title}</h2>
-                                    <p
-                                    onClick={()=>deletePhoto(index)}
-                                    >Delete</p>
+                                    { isDesktop && <p onClick={()=>deletePhoto(index)}>Delete</p>}
                                 </div>
-                                <img src={item.src} alt="" className='main-image' />
+                                <div className='item-content'>
+                                    { !isDesktop && <div className='delete-div' onClick={()=>deletePhoto(index)} > <p>Delete</p> </div> }
+                                    <img src={item.src} alt="" className='main-image' />
+                                </div>
                             </div>
                         )
-                    }) : <p>No photos yet</p>
+                    }) : <p className='empty-info'>No photos yet</p>
                 }
             </div>
         )
