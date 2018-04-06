@@ -22,13 +22,3 @@ button, input[type=submit] {
 button {
     font-weight: 600;
 }
-
-.new-btn {
-    margin: 20px 0;
-    color: $nice-color;
-    font-size: 115%;
-    padding: 10px 30px;
-    border: 2px solid $nice-color;
-    text-transform: uppercase;
-    @include border-radius(7px);
-}

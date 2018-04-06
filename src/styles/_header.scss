@@ -11,3 +11,11 @@ header {
         margin: 0 5px;
     }
 }
+
+@media screen and (max-width: 768px) {
+    header{
+        justify-content: center;
+    .round-div {
+        display: none;
+    }}
+}
