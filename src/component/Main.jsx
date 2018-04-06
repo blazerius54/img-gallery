@@ -8,23 +8,17 @@ class Main extends Component {
         this.state = {
             images: [
                 { title: 'House', src: 'https://images.pexels.com/photos/380330/pexels-photo-380330.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260' },
-                { title: 'House 2', src: 'https://images.pexels.com/photos/380330/pexels-photo-380330.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260' },
-                { title: 'House 3', src: 'https://images.pexels.com/photos/380330/pexels-photo-380330.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260' },
-                { title: 'House 4', src: 'https://images.pexels.com/photos/380330/pexels-photo-380330.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260' },
-                { title: 'House 5', src: 'https://images.pexels.com/photos/380330/pexels-photo-380330.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260' },
+                { title: 'Cuba', src: 'https://images.pexels.com/photos/533771/pexels-photo-533771.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260' },
             ],
             isModalVisible: false,
             isDesktop: true
         }
-        this.updatePredicate = this.updatePredicate.bind(this);
     }
 
     addPhoto(title, src) {
-        title && src ?
-            this.setState({
-                images: [...this.state.images, { title, src }]
-            }) : null
-        console.log(this.state.images)
+        this.setState({
+            images: [...this.state.images, { title, src }]
+        })
     }
 
     deletePhoto(index) {
@@ -47,11 +41,11 @@ class Main extends Component {
 
     componentDidMount() {
         this.updatePredicate();
-        window.addEventListener("resize", this.updatePredicate);
+        window.addEventListener("resize", ()=>this.updatePredicate());
     }
 
     componentWillUnmount() {
-        window.removeEventListener("resize", this.updatePredicate);
+        window.removeEventListener("resize", ()=>this.updatePredicate());
     }
 
     render() {
@@ -59,20 +53,13 @@ class Main extends Component {
         return (
             <div className='main'>
                 <button
-                    onClick={() => this.toggleModal()}
-                    className='new-btn'>New</button>
-                {
-                    this.state.isModalVisible &&
-                    <Modal
-                        addPhoto={this.addPhoto.bind(this)}
-                        toggleModal={this.toggleModal.bind(this)}
-                    />
-
-                }
+                onClick={() => this.toggleModal()}
+                className='new-btn'>New</button>
+                { isModalVisible && <Modal addPhoto={this.addPhoto.bind(this)} toggleModal={this.toggleModal.bind(this)} /> }
                 <Gallery
-                    images={images}
-                    deletePhoto={this.deletePhoto.bind(this)}
-                    isDesktop={isDesktop}
+                images={images}
+                deletePhoto={this.deletePhoto.bind(this)}
+                isDesktop={isDesktop}
                 />
             </div>
         )

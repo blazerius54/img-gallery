@@ -18,7 +18,7 @@ class Modal extends Component {
                     <h2>New Image</h2>
                     <div
                         className='modal-form'
-                        >
+                    >
                         <input type="text"
                             placeholder='Title'
                             ref={ref => {
@@ -33,18 +33,20 @@ class Modal extends Component {
                         />
                         <div className='btn-container'>
                             <button
-                            className='new-btn close'
-                            onClick={()=>{toggleModal()}}
+                                className='new-btn close'
+                                onClick={() => { toggleModal() }}
                             >Close</button>
                             <button
-                            className='new-btn'
-                            onClick={(e) => {
-                                e.preventDefault();
-                                addPhoto(this.inputTitle.value, this.inputSrc.value)
-                                this.inputTitle.value = '';
-                                this.inputSrc.value = '';
-                                toggleModal();
-                            }}
+                                className='new-btn'
+                                onClick={(e) => {
+                                    e.preventDefault();
+                                    if (this.inputTitle.value && this.inputSrc.value) {
+                                        addPhoto(this.inputTitle.value, this.inputSrc.value)
+                                        toggleModal();
+                                    } else return
+                                    this.inputTitle.value = '';
+                                    this.inputSrc.value = '';
+                                }}
                             >Add</button>
                         </div>
                     </div>
