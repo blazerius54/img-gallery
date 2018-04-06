@@ -7,7 +7,11 @@ class Main extends Component {
         super(props);
         this.state = {
             images: [
-                { title: 'House', src: 'https://images.pexels.com/photos/380330/pexels-photo-380330.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260' }
+                { title: 'House', src: 'https://images.pexels.com/photos/380330/pexels-photo-380330.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260' },
+                { title: 'House 2', src: 'https://images.pexels.com/photos/380330/pexels-photo-380330.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260' },
+                { title: 'House 3', src: 'https://images.pexels.com/photos/380330/pexels-photo-380330.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260' },
+                { title: 'House 4', src: 'https://images.pexels.com/photos/380330/pexels-photo-380330.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260' },
+                { title: 'House 5', src: 'https://images.pexels.com/photos/380330/pexels-photo-380330.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260' },
             ],
             isModalVisible: false
         }
@@ -22,8 +26,10 @@ class Main extends Component {
     }
 
     deletePhoto (index) {
+        let newImgs = this.state.images;
+        newImgs.splice(index, 1);
         this.setState({
-            images: this.state.images.slice(0, index-1)
+            images: newImgs
         })
     }
 

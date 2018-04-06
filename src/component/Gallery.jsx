@@ -10,14 +10,14 @@ class Gallery extends Component {
                 {
                     images.length ? images.map((item, index) => {
                         return (
-                            <div className='single-item'>
+                            <div className='single-item' key={index}>
                                 <div className='single-item-header'>
                                     <h2>{item.title}</h2>
                                     <p
                                     onClick={()=>deletePhoto(index)}
                                     >Delete</p>
                                 </div>
-                                <img src={item.src} key={index} alt="" className='main-image' />
+                                <img src={item.src} alt="" className='main-image' />
                             </div>
                         )
                     }) : <p>No photos yet</p>
