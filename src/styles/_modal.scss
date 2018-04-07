@@ -53,6 +53,12 @@
     .modal {
         .modal-content {
             .modal-form {
+                input[type=text] {
+                    max-width: 100%;
+                    margin-bottom: 30px;
+                    font-size: 80%;
+                    padding: 5px;
+                }
                 .btn-container {
                     flex-direction: column;
                 }

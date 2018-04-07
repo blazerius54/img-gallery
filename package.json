@@ -1,6 +1,5 @@
 {
   "name": "img-gallery",
-  "homepage": "https://blazerius54.github.io/img-gallery/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -49,7 +48,7 @@
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom",
-    "deploy": "npm run build&&gh-pages -d build"
+    "deploy" : "npm run build&&gh-pages -d build"
   },
   "devDependencies": {
     "gh-pages": "^1.1.0",
