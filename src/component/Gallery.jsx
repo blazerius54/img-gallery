@@ -23,7 +23,7 @@ class Gallery extends Component {
                                 <div className='item-content'>
                                     {/* { !isDesktop && <div className='delete-div' onClick={()=>deletePhoto(index)} > <p>Delete</p> </div> } */}
                                     {
-                                        isDesktop
+                                        !isDesktop
                                         ?<div className='delete-div' onClick={()=>deletePhoto(index)}><p>Delete</p></div>
                                         :null
                                     }
