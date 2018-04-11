@@ -13,10 +13,20 @@ class Gallery extends Component {
                             <div className='single-item' key={index}>
                                 <div className='single-item-header'>
                                     <h2>{item.title}</h2>
-                                    { isDesktop && <p onClick={()=>deletePhoto(index)}>Delete</p>}
+                                    {/* { isDesktop && <p onClick={()=>deletePhoto(index)}>Delete</p>} */}
+                                    {
+                                        isDesktop
+                                        ?<p onClick={()=>deletePhoto(index)}>Delete</p>
+                                        : null
+                                    }
                                 </div>
                                 <div className='item-content'>
-                                    { !isDesktop && <div className='delete-div' onClick={()=>deletePhoto(index)} > <p>Delete</p> </div> }
+                                    {/* { !isDesktop && <div className='delete-div' onClick={()=>deletePhoto(index)} > <p>Delete</p> </div> } */}
+                                    {
+                                        isDesktop
+                                        ?<div className='delete-div' onClick={()=>deletePhoto(index)}><p>Delete</p></div>
+                                        :null
+                                    }
                                     <img src={item.src} alt="" className='main-image' />
                                 </div>
                             </div>
