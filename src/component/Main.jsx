@@ -55,7 +55,15 @@ class Main extends Component {
                 <button
                 onClick={() => this.toggleModal()}
                 className='new-btn'>New</button>
-                { isModalVisible && <Modal addPhoto={this.addPhoto.bind(this)} toggleModal={this.toggleModal.bind(this)} /> }
+                {/* old conditional rendering*/}
+                {/* { isModalVisible && <Modal addPhoto={this.addPhoto.bind(this)} toggleModal={this.toggleModal.bind(this)} /> } */}
+                
+                {/*new conditional rendering */}
+                {
+                    isModalVisible
+                    ? <Modal addPhoto={this.addPhoto.bind(this)} toggleModal={this.toggleModal.bind(this)} /> 
+                    : null
+                }
                 <Gallery
                 images={images}
                 deletePhoto={this.deletePhoto.bind(this)}
