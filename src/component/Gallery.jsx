@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 
 class Gallery extends Component {
 
@@ -14,19 +13,18 @@ class Gallery extends Component {
                             <div className='single-item' key={index}>
                                 <div className='single-item-header'>
                                     <h2>{item.title}</h2>
-                                    {/* { isDesktop && <p onClick={()=>deletePhoto(index)}>Delete</p>} */}
-                                    {
-                                        isDesktop
-                                        ?<p onClick={()=>deletePhoto(index)}>Delete</p>
-                                        : null
+                                    { 
+                                        isDesktop 
+                                        && <p onClick={()=>deletePhoto(index)}>Delete</p>
                                     }
                                 </div>
                                 <div className='item-content'>
-                                    {/* { !isDesktop && <div className='delete-div' onClick={()=>deletePhoto(index)} > <p>Delete</p> </div> } */}
                                     {
                                         !isDesktop
-                                        ?<div className='delete-div' onClick={()=>deletePhoto(index)}><p>Delete</p></div>
-                                        :null
+                                        && 
+                                        <div className='delete-div' onClick={() => deletePhoto(index)} >
+                                            <p>Delete</p>
+                                        </div>
                                     }
                                     <img src={item.src} alt="" className='main-image' />
                                 </div>
@@ -39,12 +37,4 @@ class Gallery extends Component {
     }
 }
 
-
-function mapStateToProps (state) {
-    console.log(state.images)
-    return {
-        images: state.images
-    }
-}
-
-export default connect(mapStateToProps)(Gallery)
+export default Gallery

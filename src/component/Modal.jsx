@@ -8,7 +8,7 @@ class Modal extends Component {
         }
     }
     componentDidMount() {
-        window.addEventListener('click', (e) => {
+        this.modalMain.addEventListener('click', (e)=>{
             if (e.target === this.modalMain) {
                 this.props.toggleModal()
             }
@@ -24,9 +24,7 @@ class Modal extends Component {
             <div className='modal' ref={ref => { this.modalMain = ref }}>
                 <div className='modal-content'>
                     <h2>New Image</h2>
-                    <div
-                        className='modal-form'
-                    >
+                    <div className='modal-form'>
                         <input type="text"
                             placeholder='Title'
                             className={error?'danger':null}
@@ -45,8 +43,7 @@ class Modal extends Component {
                         />
                         {
                             error
-                            ? <div className='error'><p>{error}</p></div>
-                            : null
+                            && <div className='error'><p>{error}</p></div>
                         }
                         <div className='btn-container'>
                             <button
@@ -57,7 +54,6 @@ class Modal extends Component {
                                 className='new-btn'
                                 onClick={(e) => {
                                     e.preventDefault();
-                                    console.log(this.inputSrc.value)
                                     if (this.inputTitle.value && regex.test(this.inputSrc.value)) {
                                         addPhoto(this.inputTitle.value, this.inputSrc.value)
                                         toggleModal();
@@ -69,7 +65,6 @@ class Modal extends Component {
                                 }}
                             >Add</button>
                         </div>
-                        
                     </div>
                 </div>
             </div>
