@@ -34,7 +34,9 @@ class Main extends Component {
     }
 
     render() {
-        const { images, isModalVisible, isDesktop } = this.state
+        const { isModalVisible, isDesktop } = this.state;
+        const { images, addImg, deleteImg } = this.props;
+        
         return (
             <div className='main'>
                 <button
@@ -44,14 +46,14 @@ class Main extends Component {
                 { 
                     isModalVisible && 
                     <Modal 
-                    addPhoto={this.props.addImg} 
+                    addPhoto={addImg} 
                     toggleModal={this.toggleModal.bind(this)} 
                     /> 
                 }
                 
                 <Gallery
-                images={this.props.images}
-                deletePhoto={this.props.deleteImg}
+                images={images}
+                deletePhoto={deleteImg}
                 isDesktop={isDesktop}
                 />
             </div>
@@ -60,7 +62,6 @@ class Main extends Component {
 }
 
 function mapStateToProps (state) {
-    console.log(state.images)
     return {
         images: state.images
     }

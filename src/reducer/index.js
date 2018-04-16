@@ -15,7 +15,6 @@ export function reducer(state = [], action) {
                     ...state.images.slice(action.index+1),
                 ]
             }
-            return state;
         default: return state;
     } 
 }
