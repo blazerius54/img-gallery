@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 class Gallery extends Component {
 
@@ -38,4 +39,12 @@ class Gallery extends Component {
     }
 }
 
-export default Gallery
+
+function mapStateToProps (state) {
+    console.log(state.images)
+    return {
+        images: state.images
+    }
+}
+
+export default connect(mapStateToProps)(Gallery)

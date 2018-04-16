@@ -65,7 +65,7 @@ class Main extends Component {
                     : null
                 }
                 <Gallery
-                images={images}
+                // images={images}
                 deletePhoto={this.deletePhoto.bind(this)}
                 isDesktop={isDesktop}
                 />
